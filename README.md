@@ -1,5 +1,5 @@
 # AX-React-Lib
-Some useful hooks for react development.
+Some useful staffs for react development.
 ## Hooks
 ### useStore(key:string)
 Access `Store` data.
