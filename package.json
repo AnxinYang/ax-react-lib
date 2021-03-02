@@ -23,7 +23,8 @@
     "build": "tsc",
     "patch": "npm version patch",
     "minor": "npm version minor",
-    "major": "npm version major"
+    "major": "npm version major",
+    "publish": "npm publish"
   },
   "eslintConfig": {
     "extends": [
