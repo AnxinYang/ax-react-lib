@@ -1,17 +1,17 @@
 # AX-React-Lib
 Some useful hooks for react development.
+## Hooks
+### useStore
 
-## useStore
 
-
-## useAsync(fn:Function)
+### useAsync(fn:Function)
 Use `useAsync` when an async operation is needed.
-### parameters
+#### parameters
 `fn`: an async function.
-### returns
+#### returns
 `isDone`: The status of current async operation, return `true` when operation is finished.
 `reset`: A function can restart the async operation.
-### Usage
+#### Usage
 ```javascript
 function SomeComponent(){
     const [data,setData] = useState();
