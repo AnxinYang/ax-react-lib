@@ -12,7 +12,7 @@ Use `useAsync` when an async operation is needed.
 `isDone`: The status of current async operation, return `true` when operation is finished.
 `reset`: A function can restart the async operation.
 ### Usage
-```
+```javascript
 function SomeComponent(){
     const [data,setData] = useState();
     const [isDone,reset] = useAsync(async ()=>{
