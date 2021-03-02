@@ -60,6 +60,7 @@ Access `Store` data.
 #### Parameters
 `key`: a string key for access data.
 `defaultValue`: The default value when no data in the store for the key.
+
 #### Returns
 `data`:Tthe value of the key in the store.
 `update`: A function to update the value of the key. It take an `action` when there is a reducer assigned to the key or take any value when not reducer is assigned.
