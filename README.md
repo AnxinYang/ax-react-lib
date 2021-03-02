@@ -43,9 +43,9 @@ function App(){
         const [counter3,setCounter3]=useStore('counter3',0);
 
         return (
-            <button onClick={setCounter({type:'increment'})}>counter</button>
-            <button onClick={setCounter(counter2+1)}>counter2</button>
-            <button onClick={setCounter(counter+counter2)}>counter3</button>
+            <button onClick={()=>setCounter({type:'increment'})}>counter</button>
+            <button onClick={()=>setCounter(counter2+1)}>counter2</button>
+            <button onClick={()=>setCounter(counter+counter2)}>counter3</button>
         )
     }
 }
