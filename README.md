@@ -1,5 +1,58 @@
 # AX-React-Lib
 Some useful staffs for react development.
+
+## Components
+### Store
+The component for manage app state.
+
+#### props
+`reducers`: An object that take reducer for different key.
+`defaultValues`: An object that assign defaultValue to different key.
+`children`: ReactNode.
+#### Example
+```javascript
+function App(){
+    return (
+        <Store
+            reducers={{
+                'counter': (state, action)=>{
+                    switch(action.type){
+                        case 'increment':
+                            return state+1;
+                        case 'reset':
+                            return 0;
+                        case 'set':
+                            return action.counter;
+                        default:
+                            return state;
+                    }
+                }
+            }}
+            defaultValues={{
+                'counter':0,
+                'counter2':0
+            }}
+        >
+        <Children/>
+        </Store>
+    )
+    function Children(){
+        const [counter,setCounter]=useStore('counter');
+        const [counter2,setCounter2]=useStore('counter2');
+        const [counter3,setCounter3]=useStore('counter3',0);
+
+        return (
+            <div>
+                <button onClick={()=>setCounter({type:'increment'})}>counter</button>
+                <button onClick={()=>setCounter(counter2+1)}>counter2</button>
+                <button onClick={()=>setCounter(counter+counter2)}>counter3</button>
+            </div>
+        )
+    }
+}
+
+```
+
 ## Hooks
 ### useStore(key:string)
 Access `Store` data.
@@ -43,9 +96,11 @@ function App(){
         const [counter3,setCounter3]=useStore('counter3',0);
 
         return (
-            <button onClick={()=>setCounter({type:'increment'})}>counter</button>
-            <button onClick={()=>setCounter(counter2+1)}>counter2</button>
-            <button onClick={()=>setCounter(counter+counter2)}>counter3</button>
+            <div>
+                <button onClick={()=>setCounter({type:'increment'})}>counter</button>
+                <button onClick={()=>setCounter(counter2+1)}>counter2</button>
+                <button onClick={()=>setCounter(counter+counter2)}>counter3</button>
+            </div>
         )
     }
 }
