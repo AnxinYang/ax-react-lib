@@ -1,0 +1,11 @@
+{
+  "name": "ax-hookers",
+  "version": "1.0.0",
+  "description": "Useful react hookers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anxin Yang",
+  "license": "ISC"
+}
