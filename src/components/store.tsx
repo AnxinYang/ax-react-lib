@@ -13,6 +13,9 @@ export function Store(props: {
     reducers?: {
         [key: string]: Reducer
     }
+    defaultValues?: {
+        [key: string]: any
+    }
 }) {
     const updateStore = (key: string, value: any | Action) => {
         const oldValue = data.data.get(key);
@@ -30,7 +33,7 @@ export function Store(props: {
     }
     const [data, setData] = useState({
         ts: Date.now(),
-        data: new Map(),
+        data: props.defaultValues ? convertObjectToMap(props.defaultValues) : new Map(),
     })
     return (
         <storeContext.Provider value={{
@@ -40,4 +43,14 @@ export function Store(props: {
             {props.children}
         </storeContext.Provider>
     )
+}
+
+function convertObjectToMap(obj: { [key: string]: any }) {
+    const map = new Map()
+    for (let key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            map.set(key, obj[key]);
+        }
+    }
+    return map
 }
