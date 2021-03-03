@@ -67,9 +67,11 @@ Access `Store` data.
 
 #### Returns
 [data:any, update:(value|Action)=>void]
+
 `data`:The value of the key in the store.
 
 `update`: A function to update the value of the key. It take an `action` when there is a reducer assigned to the key or take any value when not reducer is assigned.
+
 #### Example
 ```javascript
 function App(){
