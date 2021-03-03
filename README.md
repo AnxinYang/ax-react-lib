@@ -57,7 +57,7 @@ function App(){
 ```
 
 ## Hooks
-### useStore(key:string)
+### useStore(key:string, defaultValue?:any)
 Access `Store` data.
 
 #### Parameters
