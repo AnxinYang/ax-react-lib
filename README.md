@@ -7,8 +7,11 @@ The component for manage app state.
 
 #### props
 `reducers`: An object that take reducer for different key.
+
 `defaultValues`: An object that assign defaultValue to different key.
+
 `children`: ReactNode.
+
 #### Example
 ```javascript
 function App(){
@@ -59,10 +62,13 @@ Access `Store` data.
 
 #### Parameters
 `key`: a string key for access data.
+
 `defaultValue`: The default value when no data in the store for the key.
 
 #### Returns
-`data`:Tthe value of the key in the store.
+[data:any, update:(value|Action)=>void]
+`data`:The value of the key in the store.
+
 `update`: A function to update the value of the key. It take an `action` when there is a reducer assigned to the key or take any value when not reducer is assigned.
 #### Example
 ```javascript
@@ -112,8 +118,12 @@ Use `useAsync` when an async operation is needed.
 #### Parameters
 `fn`: an async function.
 #### Returns
+[isDone:boolean, reset:()=>void]
+
 `isDone`: The status of current async operation, return `true` when operation is finished.
+
 `reset`: A function can restart the async operation.
+
 #### Example
 ```javascript
 function SomeComponent(){
