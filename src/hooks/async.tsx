@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function useAsync(fn: Function): [isDone: boolean, reset: () => void] {
+export function useAsync(fn: Function): [boolean, () => void] {
     const [stage, setStage] = useState(0);
     const run = async () => {
         setStage(1)
