@@ -56,6 +56,82 @@ function App(){
 
 ```
 
+### If
+A component that render it's children when condition is meet.
+
+#### props
+
+`condition`: A boolean value or a function that returns a boolean value.
+
+`children`: ReactNode. Children will be render when the condition is true.
+
+#### Example
+```javascript
+function App(){
+    return (
+        <Store>
+        <Children/>
+        </Store>
+    )
+    function Children(){
+        const [isLogin,setLogin]=useStore('login');
+
+        return (
+            <div>
+                <If condition={isLogin}>
+                    <Contents></Contents>
+                </If>
+                <If condition={!isLogin}>
+                    <Login/>
+                </If>
+            </div>
+        )
+    }
+}
+
+```
+
+### Loader
+A component will run a function.
+#### props
+`load`: a function for loading things.
+`callback`: Optional, a function for handle result of `load`.
+
+#### Example
+```javascript
+function App(){
+    return (
+        <Store>
+        <Children/>
+        </Store>
+    )
+    function Children(){
+        const [isLogin,setLogin]=useStore('login');
+
+        return (
+            <div>
+            <Loader 
+                load={async ()=>{
+                    const res = await login();
+                    return res;
+                }}
+                callback={(res)=>{
+                    setLogin(res)
+                }}
+            />
+                <If condition={isLogin}>
+                    <Contents></Contents>
+                </If>
+                <If condition={!isLogin}>
+                    <Login/>
+                </If>
+            </div>
+        )
+    }
+}
+
+```
+
 ## Hooks
 ### useStore(key:string, defaultValue?:any)
 Access `Store` data.
