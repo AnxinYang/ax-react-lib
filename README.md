@@ -195,6 +195,7 @@ function App(){
 Use `useAsync` when an async operation is needed.
 #### Parameters
 `fn`: an async function.
+`DependencyList `: React DependencyList. 
 #### Returns
 [isDone:boolean, reset:()=>void]
 

@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
-export function useAsync(fn: Function): [boolean, () => void] {
+export function useAsync(fn: Function, dependencyList?: React.DependencyList): [boolean, () => void] {
     const [isDone, setIsDone] = useState(false);
     const [ts, setTs] = useState(Date.now());
     const run = async () => {
@@ -9,7 +9,7 @@ export function useAsync(fn: Function): [boolean, () => void] {
     }
     useEffect(() => {
         run();
-    }, [ts]);
+    }, [ts, ...(dependencyList ?? [])]);
 
     return [isDone, () => {
         setIsDone(false);
