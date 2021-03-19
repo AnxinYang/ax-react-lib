@@ -17,12 +17,12 @@ export function Store(props: {
         [key: string]: any
     }
 }) {
-    const updateStore = async (key: string, value: any | Action) => {
+    const updateStore = (key: string, value: any | Action) => {
         const oldValue = data.data.get(key);
         let newValue = value;
         if (props.reducers && props.reducers[key]) {
             if (value.type === undefined) throw new Error(`Error: Store key "${key}" has a reducer but don't receive an action type.`)
-            newValue = await props.reducers[key](oldValue, value);
+            newValue = props.reducers[key](oldValue, value);
         }
         data.data.set(key, newValue);
         if (oldValue !== newValue)
