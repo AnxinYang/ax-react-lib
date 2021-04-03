@@ -11,4 +11,6 @@ export function Loader(props: {
         }
         load()
     }, [props.load, props.callback])
+
+    return null;
 }
