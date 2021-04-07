@@ -219,3 +219,11 @@ function SomeComponent(){
 }
 
 ```
+
+### useDelay(fn:()=>void, ms:number, dep:React.DependencyList)
+
+`useEffect` with delay.
+
+#### Parameters
+`fn`: an function.
+`dep `: React DependencyList. 
