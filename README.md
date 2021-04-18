@@ -132,6 +132,34 @@ function App(){
 
 ```
 
+
+### LazyLoad
+A component will render its children when it's visible.
+#### props
+`tag`: HTML tag name or React component name, Default: `div`
+`children`: ReactNode
+`style`: CSS properties
+`className`:CSS class name
+`root`:The element that is used as the viewport for checking visibility of the target.
+`threshold`: Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed. Default: `0`
+`rootMargin`: Margin around the root.
+`forward`: boolean. If set to `true`, the observer will be removed once the element is visible. Default: `true`
+
+#### Example
+```javascript
+function App(){
+    return (
+        <div>
+            ...React Nodes
+            <LazyLoad tag='div'>
+                ...React Nodes
+            </LazyLoad>
+        </div>
+    )
+}
+
+```
+
 ## Hooks
 ### useStore(key:string, defaultValue?:any)
 Access `Store` data.
@@ -227,3 +255,16 @@ function SomeComponent(){
 #### Parameters
 `fn`: an function.
 `dep `: React DependencyList. 
+
+
+### useIntersectionObserver
+
+#### Parameters
+`ref`: A ref to Element .
+`options`: IntersectionObserverInit. 
+`forward`:If set to `true`, the observer will be removed once the element is visible. Default: `true`
+
+### Returns
+
+`isIntersecting`: A boolean value. Return `true` if the element is intersecting.
+
