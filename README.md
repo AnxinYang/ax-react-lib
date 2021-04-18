@@ -137,12 +137,18 @@ function App(){
 A component will render its children when it's visible.
 #### props
 `tag`: HTML tag name or React component name, Default: `div`
+
 `children`: ReactNode
+
 `style`: CSS properties
+
 `className`:CSS class name
 `root`:The element that is used as the viewport for checking visibility of the target.
+
 `threshold`: Either a single number or an array of numbers which indicate at what percentage of the target's visibility the observer's callback should be executed. Default: `0`
+
 `rootMargin`: Margin around the root.
+
 `forward`: boolean. If set to `true`, the observer will be removed once the element is visible. Default: `true`
 
 #### Example
@@ -261,7 +267,9 @@ function SomeComponent(){
 
 #### Parameters
 `ref`: A ref to Element .
+
 `options`: IntersectionObserverInit. 
+
 `forward`:If set to `true`, the observer will be removed once the element is visible. Default: `true`
 
 ### Returns
