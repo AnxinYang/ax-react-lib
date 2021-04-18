@@ -31,7 +31,7 @@ export function useIntersectionObserver(ref: MutableRefObject<Element | null>, o
         return () => {
             cleanOb()
         }
-    }, [element])
+    }, [element, options])
 
 
     return isIntersecting;
