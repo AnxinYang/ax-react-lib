@@ -229,6 +229,7 @@ function App(){
 Use `useAsync` when an async operation is needed.
 #### Parameters
 `fn`: an async function.
+`cleanUp`: an function that will be call when component it unmounted.
 `DependencyList `: React DependencyList. 
 #### Returns
 [isDone:boolean, reset:()=>void]
