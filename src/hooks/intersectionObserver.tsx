@@ -20,7 +20,6 @@ export function useIntersectionObserver(ref: MutableRefObject<Element | null>, o
         cleanOb()
         const ob = observer.current = new IntersectionObserver(([entry]) => {
             const isElementIntersecting = entry.isIntersecting;
-            console.log(isElementIntersecting)
             if (!forward) {
                 setIsIntersecting(isElementIntersecting)
             } else if (forward && !isIntersecting && isElementIntersecting) {
